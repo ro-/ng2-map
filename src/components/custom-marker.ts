@@ -163,7 +163,7 @@ export class CustomMarker implements OnInit, OnChanges, OnDestroy {
 
     // update object when input changes
     this.inputChanges$
-      .debounceTime(1000)
+      //.debounceTime(100)
       .subscribe((changes: SimpleChanges) => this.ng2Map.updateGoogleObject(this.mapObject, changes));
 
     this.ng2MapComponent.addToMapObjectGroup('CustomMarker', this.mapObject);

@@ -64,7 +64,7 @@ var OptionBuilder = (function () {
                         || input;
             }
         }
-        if (output instanceof Array) {
+        if (output instanceof Array && options['key'] !== undefined) {
             if (options['key'] === 'bounds') {
                 output = new google.maps.LatLngBounds(output[0], output[1]);
             }
@@ -232,9 +232,9 @@ var OptionBuilder = (function () {
         { type: core_1.Injectable },
     ];
     /** @nocollapse */
-    OptionBuilder.ctorParameters = [
+    OptionBuilder.ctorParameters = function () { return [
         { type: geo_coder_1.GeoCoder, },
-    ];
+    ]; };
     return OptionBuilder;
 }());
 exports.OptionBuilder = OptionBuilder;

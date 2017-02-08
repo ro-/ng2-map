@@ -128,7 +128,6 @@ var CustomMarker = (function () {
         this.ng2Map.setObjectEvents(OUTPUTS, this, 'mapObject');
         // update object when input changes
         this.inputChanges$
-            .debounceTime(1000)
             .subscribe(function (changes) { return _this.ng2Map.updateGoogleObject(_this.mapObject, changes); });
         this.ng2MapComponent.addToMapObjectGroup('CustomMarker', this.mapObject);
         this.initialized$.emit(this.mapObject);
@@ -142,11 +141,11 @@ var CustomMarker = (function () {
                 },] },
     ];
     /** @nocollapse */
-    CustomMarker.ctorParameters = [
+    CustomMarker.ctorParameters = function () { return [
         { type: ng2_map_component_1.Ng2MapComponent, },
         { type: core_1.ElementRef, },
         { type: ng2_map_1.Ng2Map, },
-    ];
+    ]; };
     return CustomMarker;
 }());
 exports.CustomMarker = CustomMarker;

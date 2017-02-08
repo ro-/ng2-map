@@ -72,7 +72,7 @@ export class OptionBuilder {
       }
     }
 
-    if (output instanceof Array) { //e.g., [1, 2]
+    if (output instanceof Array && options['key'] !== undefined) { //e.g., [1, 2]
       if (options['key'] === 'bounds') {
         output = new google.maps.LatLngBounds(output[0], output[1]);
       }
